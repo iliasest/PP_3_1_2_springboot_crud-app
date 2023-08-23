@@ -7,7 +7,7 @@ import xyz.ilias.PP_3_1_2_springboot_crudapp.model.User;
 import java.util.List;
 
 public interface UserDAO {
-    List<User> allUsers();
+    List<User> getAllUsers();
 
     void add(User user);
 

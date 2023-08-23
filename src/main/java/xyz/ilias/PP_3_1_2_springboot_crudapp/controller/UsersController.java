@@ -13,10 +13,10 @@ public class UsersController {
     private UserService userService;
 
     @GetMapping()
-    public ModelAndView allUsers() {
+    public ModelAndView getAllUsers() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("users");
-        modelAndView.addObject("usersList", userService.allUsers());
+        modelAndView.addObject("usersList", userService.getAllUsers());
         return modelAndView;
     }
 

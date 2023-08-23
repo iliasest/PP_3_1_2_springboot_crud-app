@@ -15,7 +15,7 @@ public class UserDAOImpl implements UserDAO{
     private EntityManager entityManager;
 
     @Override
-    public List<User> allUsers() {
+    public List<User> getAllUsers() {
         Query query = entityManager.createNativeQuery("select * from Users", User.class);
         return query.getResultList();
     }
@@ -27,10 +27,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void delete(int id) {
-        entityManager
-                .createQuery("DELETE FROM User WHERE id =:userId")
-                .setParameter("userId", id)
-                .executeUpdate();
+        entityManager.remove(getById(id));
     }
 
     @Override
